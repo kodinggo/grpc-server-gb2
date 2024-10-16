@@ -1,0 +1,20 @@
+syntax="proto3";
+
+package pb.grpc_server;
+
+option go_package = "pb/grpc_server";
+
+import "google/protobuf/timestamp.proto";
+
+message Story {
+    int64 id = 1;
+    string title = 2;
+    string content = 3;
+    int64 author_id = 4;
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp updated_at = 6;
+}
+
+message Stories {
+    repeated Story stories = 1;
+}

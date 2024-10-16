@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package pb.grpc_server;
+
+option go_package = "pb/grpc_server";
+
+import "google/protobuf/empty.proto";
+
+import "pb/grpc_server/user.proto";
+import "pb/grpc_server/story.proto";
+import "pb/grpc_server/story_request.proto";
+
+service StoryService {
+    rpc FindAll(StoryFindAllRequest) returns (Stories);
+}
